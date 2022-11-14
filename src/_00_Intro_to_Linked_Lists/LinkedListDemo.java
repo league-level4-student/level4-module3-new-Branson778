@@ -16,12 +16,12 @@ public class LinkedListDemo {
          * doubly-linked list.
          * 
          * 1. Read through the LinkedList and Node classes.
-         * 
+         * done
          * 2. Create a LinkedList of any type you like.
-         * 
+         * done
          * 3. Try using some LinkedList methods to add, remove and print a few
          * elements.
-         * 
+         * done
          * 4. Save the head or tail reference into a Node Object and use
          * references to traverse through the list and perform an operation on
          * every element then print the list to see if it worked.
@@ -31,7 +31,19 @@ public class LinkedListDemo {
          * String nodes.
          * 
          */
-
+       LinkedList<Integer> list = new LinkedList<Integer>();
+       list.add(14);
+       list.add(17);
+       list.add(-97);
+       list.print();
+       list.remove(2);
+       list.add(71);
+       list.add(21);
+       list.add(13);
+       list.add(41);
+       list.add(19);
+       list.print();
+       
     }
 
 }
