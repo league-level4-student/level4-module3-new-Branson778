@@ -43,7 +43,7 @@ public class LinkedListDemo {
        list.add(41);
        list.add(19);
        list.print();
-       
+       //quick edit because of an error
     }
 
 }
