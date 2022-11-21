@@ -43,6 +43,12 @@ public class LinkedListDemo {
        list.add(41);
        list.add(19);
        list.print();
+       Node<Integer> current = list.getHead();
+       for (int i = 0; i < list.size(); i++) {
+		current.setValue(current.getValue()*2);
+		System.out.println(current.getValue());
+		current = current.getNext();
+	}
        //quick edit because of an error
     }
 
