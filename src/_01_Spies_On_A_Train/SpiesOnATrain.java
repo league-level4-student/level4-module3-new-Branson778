@@ -42,7 +42,7 @@ public class SpiesOnATrain {
 					int clueIndex = sorter.indexOf(clues[j], 0);
 					int nameIndex = sorter.indexOf("saw",0)+3;
 					String name = testimonies.get(i).substring(nameIndex, clueIndex).trim();
-					if(suspects.get(name).equals(null)) {
+					if(suspects.get(name)==null) {
 						suspects.put(name, 1);
 					}
 					else {
