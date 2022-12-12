@@ -65,7 +65,32 @@ public class RainbowZombieCongaLine {
 
     // Place the zombie at the designated position in the conga line!
     public void jumpInTheLine(Zombie dancer, int position) {
-
+    	if(congaLine.size()!=0) {
+        	Node<Zombie> head = congaLine.getHead();
+        	Node<Zombie> headnx = head.getNext();
+        	Node<Zombie> headpr = head.getPrev();
+        	for (int i = 0; i < congaLine.size(); i++) {
+        		headpr = head.getPrev();
+        		headnx = head.getNext();
+        		if(head.getValue().getZombieHatColor().equals(dancer.getZombieHatColor())) {
+        			if(headnx!=null) {
+        				//dancer.setNext(headnx);
+        		}
+        			if(headpr!=null) {
+        				//dancer.setPrev(headpr);
+        			}
+        			congaLine.add(dancer);
+        			//using normal .add makes it go to back so you have to add it to back and then for loop to slowly move it forwards
+        		break;
+        		}
+        		head = head.getNext();
+    	}
+    	}
+    	else {
+            Node<Zombie> add = new Node<Zombie>(dancer);
+        	congaLine.setHead(add);
+        	congaLine.setTail(add);
+    	}
     }
 
     /*
@@ -73,7 +98,16 @@ public class RainbowZombieCongaLine {
      * the conga line!
      */
     public void everyoneOut(Zombie dancer) {
-
+    	if(congaLine.size()!=0) {
+        	Node<Zombie> head = congaLine.getHead();
+        	for (int i = 0; i < congaLine.size(); i++) {
+        		if(head.getValue().getZombieHatColor().equals(dancer.getZombieHatColor())) {
+        		congaLine.remove(i);
+        		i--;
+        		}
+        		head = head.getNext();
+    	}
+    	 }
     }
 
     /*
@@ -81,7 +115,16 @@ public class RainbowZombieCongaLine {
      * from the conga line!
      */
     public void youAreDone(Zombie dancer) {
-
+    	if(congaLine.size()!=0) {
+    	Node<Zombie> head = congaLine.getHead();
+    	for (int i = 0; i < congaLine.size(); i++) {
+    		if(head.getValue().getZombieHatColor().equals(dancer.getZombieHatColor())) {
+    		congaLine.remove(i);
+    		break;
+    		}
+    		head = head.getNext();
+	}
+    	}
     }
 
     /*
