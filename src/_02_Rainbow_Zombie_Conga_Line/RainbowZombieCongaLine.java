@@ -1,5 +1,8 @@
 package _02_Rainbow_Zombie_Conga_Line;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import _00_Intro_to_Linked_Lists.LinkedList;
 import _00_Intro_to_Linked_Lists.Node;
 
@@ -65,32 +68,34 @@ public class RainbowZombieCongaLine {
 
     // Place the zombie at the designated position in the conga line!
     public void jumpInTheLine(Zombie dancer, int position) {
+       	LinkedList<Zombie> beforelist = new LinkedList<Zombie>();
     	if(congaLine.size()!=0) {
         	Node<Zombie> head = congaLine.getHead();
         	Node<Zombie> headnx = head.getNext();
         	Node<Zombie> headpr = head.getPrev();
         	for (int i = 0; i < congaLine.size(); i++) {
-        		headpr = head.getPrev();
-        		headnx = head.getNext();
-        		if(head.getValue().getZombieHatColor().equals(dancer.getZombieHatColor())) {
-        			if(headnx!=null) {
-        				//dancer.setNext(headnx);
+            	headnx = head.getNext();
+            	headpr = head.getPrev();
+        		if(i!=position) {
+					beforelist.add(head.getValue());
+					head=headnx;
+				}
+        		else {
+        			beforelist.add(dancer);
+        			beforelist.add(head.getValue());
+        			head=headnx;
         		}
-        			if(headpr!=null) {
-        				//dancer.setPrev(headpr);
-        			}
-        			congaLine.add(dancer);
-        			//using normal .add makes it go to back so you have to add it to back and then for loop to slowly move it forwards
-        		break;
-        		}
-        		head = head.getNext();
-    	}
+			}
+
     	}
     	else {
             Node<Zombie> add = new Node<Zombie>(dancer);
-        	congaLine.setHead(add);
-        	congaLine.setTail(add);
+        	beforelist.setHead(add);
+        	beforelist.setTail(add);
+        	System.out.println(position);
     	}
+    	//beforelist.print();
+    	congaLine = beforelist;
     }
 
     /*

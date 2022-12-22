@@ -91,7 +91,7 @@ public class RainbowZombieDanceParty {
                 danceParty.rainbowBrains(dancer);
                 break;
             }
-
+           congaLine = danceParty.getCongaLine();
             System.out.println();
             congaLine.print();
             System.out.println();

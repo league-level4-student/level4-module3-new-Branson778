@@ -80,9 +80,9 @@ public class LinkedList<T> {
         } else {
 
             Node<T> next = head;
-
+            System.out.println("");
             while (next != null) {
-
+       
                 System.out.print(next.getValue().toString() + " <-> ");
                 next = next.getNext();
 
