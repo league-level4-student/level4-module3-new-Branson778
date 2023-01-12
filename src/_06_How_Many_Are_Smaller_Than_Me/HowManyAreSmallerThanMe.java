@@ -32,7 +32,7 @@ public class HowManyAreSmallerThanMe {
     		AVLNode traveler2 = traveler.getRight();
 			recursiveSearch(lessThan, traveler2);
 		}
-		else if(traveler.getLeft()!=null) {
+		if(traveler.getLeft()!=null) {
 			AVLNode traveler3 = traveler.getLeft();
 			recursiveSearch(lessThan, traveler3);
 		}
